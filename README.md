@@ -6,9 +6,7 @@ fast way to register a business with Nigeria's Corporate Affairs Commission (CAC
 | Skill | For | What it teaches |
 |---|---|---|
 | [`fastcac`](plugins/fastcac/skills/fastcac/SKILL.md) | Anyone using ChatGPT, Claude, Cursor or another AI app | How to use FastCAC's MCP server: check a business name, find the right line of business, explain CAC's rules and fees, and register a business name with you |
-| [`fastcac-api-basics`](plugins/fastcac-developers/skills/fastcac-api-basics/SKILL.md) | Developers building on the [FastCAC API](https://docs.fastcac.com) | Keys and test/live mode, errors, idempotency, rate limits, pagination, the wallet, webhooks and signature checks, going live |
-| [`fastcac-registrations`](plugins/fastcac-developers/skills/fastcac-registrations/SKILL.md) | Developers | Registering a business name by API: name checks, NIN lookups, documents, submit, CAC queries, the certificate, testing every outcome |
-| [`fastcac-business-data`](plugins/fastcac-developers/skills/fastcac-business-data/SKILL.md) | Developers | Searching, looking up, verifying and monitoring businesses on CAC's register, and NIN lookups |
+| [`fastcac-api`](plugins/fastcac-developers/skills/fastcac-api/SKILL.md) | Developers building on the [FastCAC API](https://docs.fastcac.com) | Everything to integrate: keys and test mode, errors, idempotency, webhooks and the wallet, then registering business names and searching, verifying and monitoring businesses (in `references/`, read when needed) |
 
 ## Install
 
@@ -19,9 +17,8 @@ Codex, OpenCode and more):
 npx skills add devgenix/fastcac-skills
 ```
 
-Add `--skill <name>` to install just one (for example `--skill fastcac`, or the three developer
-skills with `--skill fastcac-api-basics fastcac-registrations fastcac-business-data`),
-or `-g` to install for every project.
+Add `--skill fastcac` or `--skill fastcac-api` to install just one, or `-g` to install for every
+project.
 
 Claude Code, as a plugin (each also connects an MCP server):
 
@@ -46,11 +43,12 @@ The `fastcac` skill works with FastCAC's MCP server at `https://api.fastcac.com/
 checks, fee calculators and CAC register search are free and need no account; registering a business asks you to sign in
 to FastCAC the first time. Setup for each app is at [fastcac.com/ai](https://fastcac.com/ai).
 
-## Developer skills and docs.fastcac.com
+## The developer skill and docs.fastcac.com
 
-The three developer skills are also served by docs.fastcac.com (`npx skills add https://docs.fastcac.com`).
-This repository is the source: change them here first, then copy them to `.mintlify/skills/` in
-fastcac-developer-docs in the same change. They never contain prices; they link
+`fastcac-api` is also served by docs.fastcac.com (`npx skills add https://docs.fastcac.com`). This
+repository is the source. docs.fastcac.com can serve only one file per skill, so fastcac-developer-docs
+builds a single `SKILL.md` from this folder with `scripts/build_skill.py`: change it here, then rebuild
+it there in the same change. It never contains prices; it links
 [fastcac.com/api/pricing](https://fastcac.com/api/pricing).
 
 ## Help

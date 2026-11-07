@@ -1,19 +1,11 @@
----
-name: fastcac-registrations
-description: Register a Nigerian Business Name with CAC through the FastCAC API. Use when building a registration flow - name availability checks, NIN lookups to prefill proprietors, creating and updating a registration, uploading documents, submitting, handling verification_failed and CAC queries, resubmitting, downloading the certificate, registration webhooks, and testing every outcome with simulate.
-metadata:
-  author: FastCAC
-  api-version: "2026-11-01"
----
-
-# Registering a business with FastCAC
+# Registering a business name
 
 Business Name registration with Nigeria's Corporate Affairs Commission (CAC):
 check the name → (optional) look up each proprietor's NIN → create a `draft` → fill it → upload
 documents → submit (charged from the wallet) → CAC decides → download the certificate.
 
-Read **fastcac-api-basics** first for keys, errors, `Idempotency-Key`, the wallet and webhook
-verification. Base URL `https://api.fastcac.com/v1`; every call needs `Authorization: Bearer $FASTCAC_KEY`.
+Keys, errors, `Idempotency-Key`, the wallet and webhook verification are in the skill's main file.
+Base URL `https://api.fastcac.com/v1`; every call needs `Authorization: Bearer $FASTCAC_KEY`.
 Never write prices into code or copy: they're at https://fastcac.com/api/pricing, and every
 charged response says what it cost in `amount_charged`.
 

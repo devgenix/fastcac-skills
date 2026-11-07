@@ -38,6 +38,10 @@ jobs:
           notes="Built from ${GITHUB_SHA}. Upload a zip in Claude under Customize > Skills > + > Create skill > Upload a skill."
           if gh release view skills >/dev/null 2>&1; then
             gh release upload skills dist/*.zip --clobber
+            # Drop zips of skills that no longer exist (renamed or removed).
+            for asset in $(gh release view skills --json assets --jq '.assets[].name'); do
+              [ -f "dist/$asset" ] || gh release delete-asset skills "$asset" --yes
+            done
             gh release edit skills --notes "$notes" --latest
           else
             gh release create skills dist/*.zip --target "$GITHUB_SHA" --title "Skills" --notes "$notes" --latest

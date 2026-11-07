@@ -1,15 +1,22 @@
 ---
-name: fastcac-api-basics
-description: Call the FastCAC API (api.fastcac.com/v1) correctly from a server. Use for any FastCAC integration work - API keys (fc_test_ / fc_live_), test vs live mode, error codes, idempotency keys, rate limits, pagination, the prepaid wallet and funding it, webhooks setup and signature verification, and going live. Pair with fastcac-registrations or fastcac-business-data for the endpoints themselves.
+name: fastcac-api
+description: Build on the FastCAC API (api.fastcac.com/v1) for Nigerian businesses. Use for any FastCAC integration - registering a business name with CAC (name checks, NIN lookups, documents, submit, verification_failed and CAC queries, resubmitting, certificates), KYB and onboarding checks (searching CAC's register by name or RC/BN number, business lookups with officers, verifying an applicant's business, monitoring for status changes, NIMC NIN lookups, and which calls are free, charged or refunded), and the basics every call needs - fc_test_/fc_live_ keys, test mode and simulate, errors, idempotency keys, rate limits, pagination, the prepaid wallet, webhooks and signature verification, going live.
 metadata:
   author: FastCAC
   api-version: "2026-11-01"
 ---
 
-# FastCAC API basics
+# The FastCAC API
 
 FastCAC is a REST API for Nigerian businesses: register a Business Name with the Corporate Affairs
 Commission (CAC), and search, look up, verify and monitor businesses on CAC's register.
+
+This file covers what every call needs. Read the reference for the job before writing its code:
+
+| Job | Calls | Read |
+|---|---|---|
+| Register a business name: name check, NIN lookup, create, documents, submit, CAC queries, certificate, testing every outcome | `/v1/businesses/names/availability`, `/v1/identities/nin_lookups`, `/v1/businesses/registrations…` | [Registering a business name](references/registrations.md) |
+| Search CAC's register, look up a business with its officers, verify an applicant's business, monitor a business, look up a NIN | `/v1/businesses/search`, `/lookups`, `/verifications`, `/monitors`, `/v1/identities/nin_lookups` | [Business data](references/business-data.md) |
 
 - Base URL: `https://api.fastcac.com/v1`. JSON in and out (document uploads are multipart).
 - Docs: https://docs.fastcac.com (page index: https://docs.fastcac.com/llms.txt). Dashboard: https://developers.fastcac.com.

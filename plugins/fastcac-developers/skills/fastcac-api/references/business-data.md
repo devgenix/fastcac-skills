@@ -1,14 +1,6 @@
----
-name: fastcac-business-data
-description: Search, look up, verify and monitor Nigerian businesses on CAC's register, and look up a person's NIN, with the FastCAC API. Use for KYB/onboarding checks - free register search by name or RC/BN number, full business records with officers and shareholders, verifying an applicant's business name, status and officers, webhooks when a business goes inactive or changes name, and NIMC NIN lookups - including which calls are free, which are charged, and when charges are refunded.
-metadata:
-  author: FastCAC
-  api-version: "2026-11-01"
----
+# Business data
 
-# FastCAC business data
-
-Same keys, wallet, webhooks and test mode as registrations. Read **fastcac-api-basics** first.
+Same keys, wallet, webhooks and test mode as registrations; those are in the skill's main file.
 Base URL `https://api.fastcac.com/v1`; send `Authorization: Bearer $FASTCAC_KEY` and an
 `Idempotency-Key` on every `POST` (a retry with the same key gets the first answer and isn't
 charged again).
@@ -109,7 +101,7 @@ use a lookup for everyone.
 | `503 cac_search_unavailable`, `402`, `400` | Not charged | Not charged |
 
 Live: 60 a minute per organization. A `not_found` applicant can register a business name through
-the API (see **fastcac-registrations**).
+the API (see [Registering a business name](registrations.md)).
 
 ## Monitor a business (charged per 30 days)
 
@@ -141,7 +133,7 @@ If CAC is down or briefly loses a record, nothing changes and no event is sent.
 names, `gender`, `date_of_birth`, `phone`, `address`, `photo` (JPEG `data:` URI), `nimc_data`.
 `consent: true` confirms the person agreed (else `400 consent_required`). Not charged or refunded
 (`nin_lookup_refund`): `422 nin_not_found`, `503 nin_lookup_unavailable`, `402`, `400`. Live: 60 a
-minute. Use it in a registration via the proprietor's `nin_lookup` (see **fastcac-registrations**).
+minute. Use it in a registration via the proprietor's `nin_lookup` (see [Registering a business name](registrations.md)).
 
 ## Test mode
 
