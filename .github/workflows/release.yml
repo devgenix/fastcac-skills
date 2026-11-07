@@ -1,0 +1,34 @@
+# Builds one zip per skill (the skill's folder at the zip's root, as Claude's Skills upload expects)
+# and attaches them to the "latest" release, so https://github.com/devgenix/fastcac-skills/releases/latest/download/<skill>.zip
+# always serves the skill on main. GitHub-hosted runner: this repository is public.
+name: Release skill zips
+
+on:
+  push:
+    branches: [main]
+    paths: ["plugins/**/skills/**", ".github/workflows/release.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  zips:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip each skill
+        run: |
+          mkdir -p dist
+          for skill in plugins/*/skills/*/; do
+            name=$(basename "$skill")
+            (cd "$(dirname "$skill")" && zip -qr "$GITHUB_WORKSPACE/dist/$name.zip" "$name")
+          done
+          ls -l dist
+      - name: Publish to the latest release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="skills-$(date -u +%Y%m%d-%H%M%S)"
+          gh release create "$tag" dist/*.zip --title "Skills $(date -u +%Y-%m-%d)" \
+            --notes "Built from ${GITHUB_SHA}. Upload a zip in Claude under Customize > Skills." --latest
