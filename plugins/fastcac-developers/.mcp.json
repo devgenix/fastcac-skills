@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "fastcac-docs": {
+      "type": "http",
+      "url": "https://docs.fastcac.com/mcp"
+    }
+  }
+}
