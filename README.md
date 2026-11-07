@@ -43,12 +43,12 @@ The `fastcac` skill works with FastCAC's MCP server at `https://api.fastcac.com/
 checks, fee calculators and CAC register search are free and need no account; registering a business asks you to sign in
 to FastCAC the first time. Setup for each app is at [fastcac.com/ai](https://fastcac.com/ai).
 
-## Developer skills and docs.fastcac.com
+## The developer skill and docs.fastcac.com
 
 `fastcac-api` is also served by docs.fastcac.com (`npx skills add https://docs.fastcac.com`). This
 repository is the source. docs.fastcac.com can serve only one file per skill, so fastcac-developer-docs
 builds a single `SKILL.md` from this folder with `scripts/build_skill.py`: change it here, then rebuild
-it there in the same change. They never contain prices; they link
+it there in the same change. It never contains prices; it links
 [fastcac.com/api/pricing](https://fastcac.com/api/pricing).
 
 ## Help
