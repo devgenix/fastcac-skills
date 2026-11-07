@@ -1,0 +1,14 @@
+{
+  "name": "fastcac",
+  "description": "FastCAC's plugins and skills for AI apps: register a business with Nigeria's Corporate Affairs Commission (CAC).",
+  "owner": { "name": "FastCAC", "email": "hello@fastcac.com", "url": "https://fastcac.com" },
+  "plugins": [
+    {
+      "name": "fastcac",
+      "source": "./plugins/fastcac",
+      "description": "FastCAC's MCP server plus the skill that teaches your AI app to check names, explain CAC's rules and fees, and register a business name with you.",
+      "category": "business",
+      "tags": ["cac", "nigeria", "business-registration"]
+    }
+  ]
+}

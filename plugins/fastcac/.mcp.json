@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "fastcac": {
+      "type": "http",
+      "url": "https://api.fastcac.com/mcp"
+    }
+  }
+}
