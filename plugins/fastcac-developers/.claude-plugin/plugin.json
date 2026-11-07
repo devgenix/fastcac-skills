@@ -1,7 +1,7 @@
 {
   "name": "fastcac-developers",
   "displayName": "FastCAC for developers",
-  "description": "Build on the FastCAC API: register Nigerian business names with CAC, and search, look up, verify and monitor businesses. Skills for keys, errors, idempotency, webhooks, the wallet, registrations and business data, plus the docs.fastcac.com search MCP server.",
+  "description": "Build on the FastCAC API: register Nigerian business names with CAC, and search, look up, verify and monitor businesses. The fastcac-api skill covers keys, errors, idempotency, webhooks, the wallet, registrations and business data; the plugin also connects the docs.fastcac.com search MCP server.",
   "version": "1.0.0",
   "author": { "name": "FastCAC", "email": "hello@fastcac.com", "url": "https://fastcac.com" },
   "homepage": "https://docs.fastcac.com",

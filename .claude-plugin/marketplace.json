@@ -13,7 +13,7 @@
     {
       "name": "fastcac-developers",
       "source": "./plugins/fastcac-developers",
-      "description": "For developers building on the FastCAC API: skills for keys, errors, webhooks and the wallet, registering business names, and business data, plus the docs search MCP server.",
+      "description": "For developers building on the FastCAC API: the fastcac-api skill (keys, errors, webhooks, the wallet, registering business names, business data) plus the docs search MCP server.",
       "category": "development",
       "tags": ["cac", "nigeria", "api", "kyb"]
     }
