@@ -1,6 +1,7 @@
 # Builds one zip per skill (the skill's folder at the zip's root, as Claude's Skills upload expects)
-# and attaches them to the "latest" release, so https://github.com/devgenix/fastcac-skills/releases/latest/download/<skill>.zip
-# always serves the skill on main. GitHub-hosted runner: this repository is public.
+# and uploads them to one release, tag `skills`, kept as the latest release, so
+# https://github.com/devgenix/fastcac-skills/releases/latest/download/<skill>.zip always serves
+# the skills on main. GitHub-hosted runner: this repository is public.
 name: Release skill zips
 
 on:
@@ -11,6 +12,11 @@ on:
 
 permissions:
   contents: write
+
+# One run at a time, in push order, so an older build never replaces a newer one.
+concurrency:
+  group: release
+  cancel-in-progress: false
 
 jobs:
   zips:
@@ -25,10 +31,14 @@ jobs:
             (cd "$(dirname "$skill")" && zip -qr "$GITHUB_WORKSPACE/dist/$name.zip" "$name")
           done
           ls -l dist
-      - name: Publish to the latest release
+      - name: Publish to the skills release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          tag="skills-$(date -u +%Y%m%d-%H%M%S)"
-          gh release create "$tag" dist/*.zip --title "Skills $(date -u +%Y-%m-%d)" \
-            --notes "Built from ${GITHUB_SHA}. Upload a zip in Claude under Customize > Skills." --latest
+          notes="Built from ${GITHUB_SHA}. Upload a zip in Claude under Customize > Skills > + > Create skill > Upload a skill."
+          if gh release view skills >/dev/null 2>&1; then
+            gh release upload skills dist/*.zip --clobber
+            gh release edit skills --notes "$notes" --latest
+          else
+            gh release create skills dist/*.zip --target "$GITHUB_SHA" --title "Skills" --notes "$notes" --latest
+          fi

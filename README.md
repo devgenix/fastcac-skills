@@ -33,13 +33,14 @@ your agent can read docs.fastcac.com while it works.
 
 Claude (claude.ai and the desktop app): download
 [`fastcac.zip`](https://github.com/devgenix/fastcac-skills/releases/latest/download/fastcac.zip),
-then upload it under Customize > Skills (the "+" button). Code execution must be on, under
-Settings > Capabilities.
+then in Claude open Customize > Skills > + > Create skill > Upload a skill, and choose the file.
+Skills need code execution ("Code execution and file creation") turned on: under Settings >
+Capabilities on your own plan, or by an owner in Organization settings on Team and Enterprise.
 
 ## The MCP server
 
-The `fastcac` skill works with FastCAC's MCP server at `https://api.fastcac.com/mcp`. The name,
-fee and register tools are free and need no account; registering a business asks you to sign in
+The `fastcac` skill works with FastCAC's MCP server at `https://api.fastcac.com/mcp`. The name
+checks, fee calculators and CAC register search are free and need no account; registering a business asks you to sign in
 to FastCAC the first time. Setup for each app is at [fastcac.com/ai](https://fastcac.com/ai).
 
 ## Developer skills and docs.fastcac.com
