@@ -1,6 +1,6 @@
 ---
 name: fastcac-api
-description: Build on the FastCAC API (api.fastcac.com/v1) for Nigerian businesses. Use for any FastCAC integration - registering a business name with CAC (name checks, NIN lookups, documents, submit, CAC queries, certificates), searching, looking up, verifying and monitoring businesses on CAC's register, and the basics every call needs - fc_test_/fc_live_ keys, test mode and simulate, errors, idempotency keys, rate limits, pagination, the prepaid wallet, webhooks and signature verification, going live.
+description: Build on the FastCAC API (api.fastcac.com/v1) for Nigerian businesses. Use for any FastCAC integration - registering a business name with CAC (name checks, NIN lookups, documents, submit, verification_failed and CAC queries, resubmitting, certificates), KYB and onboarding checks (searching CAC's register by name or RC/BN number, business lookups with officers, verifying an applicant's business, monitoring for status changes, NIMC NIN lookups, and which calls are free, charged or refunded), and the basics every call needs - fc_test_/fc_live_ keys, test mode and simulate, errors, idempotency keys, rate limits, pagination, the prepaid wallet, webhooks and signature verification, going live.
 metadata:
   author: FastCAC
   api-version: "2026-11-01"

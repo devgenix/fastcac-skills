@@ -4,8 +4,8 @@ Business Name registration with Nigeria's Corporate Affairs Commission (CAC):
 check the name → (optional) look up each proprietor's NIN → create a `draft` → fill it → upload
 documents → submit (charged from the wallet) → CAC decides → download the certificate.
 
-Keys, errors, `Idempotency-Key`, the wallet and webhook verification are in the skill's main
-file. Base URL `https://api.fastcac.com/v1`; every call needs `Authorization: Bearer $FASTCAC_KEY`.
+Keys, errors, `Idempotency-Key`, the wallet and webhook verification are in the skill's main file.
+Base URL `https://api.fastcac.com/v1`; every call needs `Authorization: Bearer $FASTCAC_KEY`.
 Never write prices into code or copy: they're at https://fastcac.com/api/pricing, and every
 charged response says what it cost in `amount_charged`.
 
