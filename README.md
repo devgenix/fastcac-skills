@@ -23,7 +23,7 @@ Add `--skill <name>` to install just one (for example `--skill fastcac`, or the 
 skills with `--skill fastcac-api-basics fastcac-registrations fastcac-business-data`),
 or `-g` to install for every project.
 
-Claude Code, as a plugin that also connects FastCAC's MCP server:
+Claude Code, as a plugin (each also connects an MCP server):
 
 ```
 /plugin marketplace add devgenix/fastcac-skills
