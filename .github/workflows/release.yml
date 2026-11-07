@@ -38,7 +38,7 @@ jobs:
           notes="Built from ${GITHUB_SHA}. Upload a zip in Claude under Customize > Skills > + > Create skill > Upload a skill."
           if gh release view skills >/dev/null 2>&1; then
             gh release upload skills dist/*.zip --clobber
-            gh release edit skills --target "$GITHUB_SHA" --notes "$notes" --latest
+            gh release edit skills --notes "$notes" --latest
           else
             gh release create skills dist/*.zip --target "$GITHUB_SHA" --title "Skills" --notes "$notes" --latest
           fi
