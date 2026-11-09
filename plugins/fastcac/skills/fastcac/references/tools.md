@@ -24,7 +24,7 @@ ask the person to sign in to FastCAC the first time one is called.
 
 | Tool | What it does |
 |---|---|
-| `get_prices` | FastCAC's own prices, live: registration, the Agent plan, annual returns, credit packs, NIN tools, the developer API. Use it every time |
+| `get_prices` | FastCAC's own prices, live: registration, the Business plan, annual returns, credit packs, NIN tools, the developer API. Use it every time |
 | `calculate_cac_fees` | CAC's government fees for a business name, a company (by share capital) or an NGO |
 | `check_annual_returns` | Which annual returns a business name owes, from its registration date |
 | `search_knowledge_base` | FastCAC's articles and policies: refunds, timelines, documents, CAC procedures, CAMA 2020 |
@@ -63,7 +63,7 @@ ask the person to sign in to FastCAC the first time one is called.
 | `apply_discount_code`, `remove_discount_code` | A discount code on an unpaid registration |
 | `get_capabilities` | What they can do now and what's blocking it (workspace, subscription, credits, WhatsApp, drafts) |
 | `get_credits`, `request_credit_purchase` | Credit balance and packs (Agent subscribers) |
-| `get_subscription`, `request_subscription`, `manage_subscription` | The Agent subscription for people registering for clients |
+| `get_subscription`, `request_subscription`, `manage_subscription` | The Business subscription for people registering for clients |
 | `request_whatsapp_verification`, `remove_whatsapp` | WhatsApp, needed to start a personal registration and before any payment |
 | `switch_workspace` | Personal (their own businesses) or Agent (clients' businesses) |
 | `update_profile` | Their account name (not a registration's proprietor name) |
