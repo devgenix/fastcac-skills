@@ -48,7 +48,7 @@ It starts a draft in the workspace they're in.
 - A blocked workspace or draft limit: `get_capabilities` says what's blocking it and which tool
   unblocks it.
 
-People registering businesses for clients work in the Agent workspace, which needs the Agent
+People registering businesses for clients work in the Business workspace, which needs the Business
 subscription (`get_subscription`, `request_subscription`). There, the NIN, photo and signature are
 the client's: say "your client's NIN", not "your NIN".
 
@@ -96,7 +96,7 @@ signature, plus a supporting document (the certificate or approval) when the nam
 ones again. Files never pass through you.
 
 For their own business (the Personal workspace), documents come after paying: before that,
-`request_documents` returns `not_paid`, so offer `request_payment`. In the Agent workspace they
+`request_documents` returns `not_paid`, so offer `request_payment`. In the Business workspace they
 can upload first.
 
 Once their NIN is confirmed, offer the ways that need nothing from them, and call a tool only after
