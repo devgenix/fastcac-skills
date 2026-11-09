@@ -62,10 +62,10 @@ ask the person to sign in to FastCAC the first time one is called.
 | `request_payment` | The person pays for a registration on FastCAC |
 | `apply_discount_code`, `remove_discount_code` | A discount code on an unpaid registration |
 | `get_capabilities` | What they can do now and what's blocking it (workspace, subscription, credits, WhatsApp, drafts) |
-| `get_credits`, `request_credit_purchase` | Credit balance and packs (Agent subscribers) |
+| `get_credits`, `request_credit_purchase` | Credit balance and packs (Business plan subscribers) |
 | `get_subscription`, `request_subscription`, `manage_subscription` | The Business subscription for people registering for clients |
 | `request_whatsapp_verification`, `remove_whatsapp` | WhatsApp, needed to start a personal registration and before any payment |
-| `switch_workspace` | Personal (their own businesses) or Agent (clients' businesses) |
+| `switch_workspace` | Personal (their own businesses) or Business (clients' businesses) |
 | `update_profile` | Their account name (not a registration's proprietor name) |
 | `get_notification_preferences`, `update_notification_preferences`, `list_notifications`, `mark_notifications_read` | Notifications |
 | `get_action_status` | Whether the person finished a step you gave them a FastCAC link for |
