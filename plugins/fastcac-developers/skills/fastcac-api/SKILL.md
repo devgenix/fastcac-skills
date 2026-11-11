@@ -182,8 +182,9 @@ Ready-made Express, Laravel and Django handlers: https://docs.fastcac.com/webhoo
 ## Going live
 
 1. On developers.fastcac.com open **Compliance**: identity (BVN + face check), then an owner or
-   admin verifies the business's CAC record (live keys unlock straight away), then the funding
-   account opens after a review (owners and admins are emailed).
+   admin who is one of the business's officers on CAC (proprietor, partner, director, trustee or
+   PSC) verifies its CAC record (live keys unlock straight away), then the funding account opens
+   after a review (owners and admins are emailed).
 2. Test every `simulate` outcome end to end.
 3. Add a live webhook endpoint and verify signatures.
 4. An owner or admin creates an `fc_live_` key. Swap the key; nothing else changes.
@@ -192,7 +193,9 @@ Ready-made Express, Laravel and Django handlers: https://docs.fastcac.com/webhoo
 Live differences: one proprietor per registration for now, CAC's own certificate PDF (arrives a
 while after approval), `simulate` is ignored, test helpers answer `403 test_mode_only`.
 FastCAC re-checks your own business's CAC status weekly; if it stays not active for 30 days the
-organization is suspended. Details: https://docs.fastcac.com/going-live
+organization is suspended. An organization live before the officer check has 14 days for an
+officer to join as an owner or admin and verify their BVN, then its live keys are refused until
+one does (test keys keep working). Details: https://docs.fastcac.com/going-live
 
 ## Checklist
 
